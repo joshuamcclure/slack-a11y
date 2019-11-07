@@ -1,0 +1,16 @@
+{
+  "name": "a11y-scanner",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "axe-core": "^3.4.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^2.0.0"
+  }
+}
