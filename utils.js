@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const axe = require('axe-core');
 const fetch = require('node-fetch');
+const URL = require("url").URL;
 
 const addAxeScript = async (frame) => {
 	await frame.addScriptTag({ content: axe.source });
@@ -8,6 +9,15 @@ const addAxeScript = async (frame) => {
 		await addAxeScript(child);
 	}
 }
+
+const isValidUrl = (s) => {
+	try {
+		new URL(s);
+		return true;
+	} catch (err) {
+		return false;
+	}
+};
 
 const scan = async (domain) => {
 	try {
@@ -22,11 +32,9 @@ const scan = async (domain) => {
         await browser.close();
 
         return results;
-	}
-
-	catch (error) {
+	} catch (error) {
         await browser.close();
-        return;
+        return false;
 	}
 };
 
@@ -65,6 +73,7 @@ const sendResponse = (slackParams, response) => {
 };
 
 module.exports = {
+	isValidUrl,
 	scan,
 	response,
 	sendResponse,

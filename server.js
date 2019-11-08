@@ -1,6 +1,6 @@
 const express = require('express');
 const logger = require('morgan');
-const { scan, response, sendResponse } = require('./utils');
+const { isValidUrl, scan, response, sendResponse } = require('./utils');
 const { PORT } = process.env;
 
 const server = express();
@@ -20,20 +20,24 @@ const delayedResponse = async (url, requestBody) => {
 
 server.get('/', (req, res, next) => {
 	res.json({ msg: 'Hello world!' });
-	delayedResponse();
 });
 
 server.post('/', async (req, res, next) => {
-	console.log(req.body);
-	const url = req.body.text;
-	// const results = await scan(url);
-	// res.json( response(url, results) );
-	res.json({
-		"response_type": "ephemeral",
-		"text": `Analyzing ${url}. Please wait!`
-	});
+	const pageUrl = req.body.text;
 
-	delayedResponse(url, req.body);
+	if ( isValidUrl(pageUrl) ) {
+		res.json({
+			"response_type": "ephemeral",
+			"text": `Analyzing ${pageUrl}. Please wait!`
+		});
+	
+		delayedResponse(pageUrl, req.body);
+	} else {
+		res.json({
+			"response_type": "ephemeral",
+			"text": `${pageUrl} doesn't seem to be a valid url. Try something else!`
+		});
+	}
 });
 
 server.listen(port, () => {
