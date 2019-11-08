@@ -68,8 +68,8 @@ const response = (url, results) => {
 
 const sendResponse = (slackParams, response) => {
 	fetch(slackParams.response_url, { method: 'POST', body: JSON.stringify(response) })
-		.then(res => res.json())
-		.then(json => console.log(json));
+		.then( res => true )
+		.catch( err => false );
 };
 
 module.exports = {
