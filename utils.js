@@ -96,16 +96,20 @@ const response = (url, results) => {
 			"blocks": [
 				{
 					"type": "section",
-					"accessory": {
-						"type": "image",
-						"image_url": `http://159.203.179.0:4117/${results.screenCapture}`,
-						"alt_text": `A screen capture of the webpage - ${url}`,
-					},
 					"text": {
 						"type": "mrkdwn",
 						"text": `*Scan Results for <${url}>*\n- ${results.results.violations.length} violations found\n- ${results.results.incomplete.length} issues that need review\n- ${results.results.passes.length} passing checkpoints`
 					}
-				},
+				},{
+					"type": "image",
+					"title": {
+						"type": "plain_text",
+						"text": `A screen capture of the webpage - ${url}`,
+						"emoji": true
+					},
+					"image_url": `http://159.203.179.0:4117/${results.screenCapture}`,
+					"alt_text": `A screen capture of the webpage - ${url}`
+				}
 			]
 		};
 	} else {
