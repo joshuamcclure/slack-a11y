@@ -18,7 +18,8 @@ server.use(express.urlencoded({ extended: true }));
 const delayedResponse = async (url, requestBody) => {
 	setTimeout( async () => {
 		const results = await scan(url);
-		sendResponse(requestBody, response(url, results));
+		const responseBody = response(url, results);
+		sendResponse(requestBody, responseBody);
 	}, 0);
 };
 
@@ -42,6 +43,15 @@ server.post('/', async (req, res, next) => {
 			"text": `${pageUrl} doesn't seem to be a valid url. Try something else!`
 		});
 	}
+});
+
+server.post('/direct', async (req, res, next) => {
+	const pageUrl = req.body.url;
+	const results = await scan(pageUrl);
+	res.json({
+		"URL": pageUrl,
+		"results": results,
+	});
 });
 
 server.listen(port, () => {

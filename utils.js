@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const axe = require('axe-core');
 const fetch = require('node-fetch');
 const URL = require("url").URL;
+const uuidv4 = require('uuid/v4');
 
 const addAxeScript = async (frame) => {
 	await frame.addScriptTag({ content: axe.source });
@@ -43,32 +44,49 @@ async function autoScroll(page){
 }
 
 const scan = async (domain) => {
+	let results = null;
+
+	const browser = await puppeteer.launch({
+		headless: false,
+		args: [`--window-size=1400,960`],
+	});
+
 	try {
-		const browser = await puppeteer.launch({
-			headless: false,
-			args: [`--window-size=1400,960`],
-		});
 		const page = await browser.newPage();
+
+		page.on('pageerror', async err => {
+			let theErr = err.toString();
+			if ( theErr && theErr.search('axe is not defined') ) {
+				results = 'Axe not defined';
+				await browser.close();
+			}
+		});
 
 		await page.setViewport({width:1400, height:960});
 	
-		await page.goto(domain, {
-			waitUntil: 'networkidle0',
-		});
+		await page.goto(domain, {waitUntil: 'networkidle0'});
 
 		await addAxeScript(page.mainFrame());
+
+		const capturePath = `captures/${uuidv4()}.png`;
+		await page.screenshot({path: capturePath});
 		
 		await autoScroll(page);
 		await timeout(5000);
 
-		const results = await page.evaluate(async () => await axe.run({ reporter: "v2" }));
+		results = await page.evaluate(async () => await axe.run({ reporter: "v2" }));
 
-        await browser.close();
-
-		return results;
+		return {
+			results,
+			screenCapture: capturePath,
+		};
 		
 	} catch (error) {
-        return false;
+        return 'There was an error. This site may be blocking the axe script injection. Please use the axe browser extension.';
+	}
+
+	finally {
+		await browser.close();
 	}
 };
 
@@ -78,9 +96,14 @@ const response = (url, results) => {
 			"blocks": [
 				{
 					"type": "section",
+					"accessory": {
+						"type": "image",
+						"image_url": `http://159.203.179.0:4117/captures/${results.screenCapture}`,
+						"alt_text": `A screen capture of the webpage - ${url}`,
+					},
 					"text": {
 						"type": "mrkdwn",
-						"text": `*Scan Results for <${url}>*\n- ${results.violations.length} violations found\n- ${results.passes.length} passing checkpoints`
+						"text": `*Scan Results for <${url}>*\n- ${results.results.violations.length} violations found\n- ${results.results.passes.length} passing checkpoints`
 					}
 				},
 			]

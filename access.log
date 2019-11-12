@@ -1,3 +1,0 @@
-::1 - - [12/Nov/2019:14:11:36 +0000] "GET / HTTP/1.1" 200 22 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
-::1 - - [12/Nov/2019:14:11:36 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
-::1 - - [12/Nov/2019:14:11:44 +0000] "GET / HTTP/1.1" 200 51 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
