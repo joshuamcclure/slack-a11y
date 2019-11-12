@@ -15,6 +15,8 @@ server.use(morgan('combined', { stream: accessLogStream }));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
+server.use('/captures', express.static('captures'));
+
 const delayedResponse = async (url, requestBody) => {
 	setTimeout( async () => {
 		const results = await scan(url);
