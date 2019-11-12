@@ -30,7 +30,11 @@ server.get('/', (req, res, next) => {
 });
 
 server.post('/', async (req, res, next) => {
-	const pageUrl = req.body.text;
+	let pageUrl = req.body.text;
+
+	if ( !pageUrl.startsWith('http') ) {
+		pageUrl = 'http://' + pageUrl;
+	}
 
 	if ( isValidUrl(pageUrl) ) {
 		res.json({
