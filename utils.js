@@ -103,7 +103,7 @@ const response = (url, results) => {
 					},
 					"text": {
 						"type": "mrkdwn",
-						"text": `*Scan Results for <${url}>*\n- ${results.results.violations.length} violations found\n- ${results.results.passes.length} passing checkpoints`
+						"text": `*Scan Results for <${url}>*\n- ${results.results.violations.length} violations found\n- ${results.results.incomplete.length} issues that need review\n- ${results.results.passes.length} passing checkpoints`
 					}
 				},
 			]
