@@ -47,7 +47,7 @@ const scan = async (domain) => {
 	let results = null;
 
 	const browser = await puppeteer.launch({
-		headless: false,
+		headless: process.env.HEADLESS || true,
 		args: [`--window-size=1400,960`],
 	});
 
