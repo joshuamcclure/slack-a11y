@@ -1,13 +1,17 @@
 const express = require('express');
-const logger = require('morgan');
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 const { isValidUrl, scan, response, sendResponse } = require('./utils');
 const { PORT } = process.env;
 
 const server = express();
 
-const port = PORT || 80;
+const port = PORT || 4117;
 
-server.use(logger('dev'));
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+server.use(morgan('combined', { stream: accessLogStream }));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
@@ -19,7 +23,7 @@ const delayedResponse = async (url, requestBody) => {
 };
 
 server.get('/', (req, res, next) => {
-	res.json({ msg: 'Hello world!' });
+	res.json({ msg: 'The Slack-A11y API seems to be operating.' });
 });
 
 server.post('/', async (req, res, next) => {
