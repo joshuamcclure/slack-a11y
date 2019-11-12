@@ -2,7 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
-const { isValidUrl, scan, response, sendResponse } = require('./utils');
+const execa = require('execa');
+const { isValidUrl, scan } = require('./utils');
 const { PORT } = process.env;
 
 const server = express();
@@ -16,14 +17,6 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 server.use('/captures', express.static('captures'));
-
-const delayedResponse = async (url, requestBody) => {
-	setTimeout( async () => {
-		const results = await scan(url);
-		const responseBody = response(url, results);
-		sendResponse(requestBody, responseBody);
-	}, 0);
-};
 
 server.get('/', (req, res, next) => {
 	res.json({ msg: 'The Slack-A11y API seems to be operating.' });
@@ -41,8 +34,7 @@ server.post('/', async (req, res, next) => {
 			"response_type": "ephemeral",
 			"text": `Analyzing ${pageUrl}. Please wait!`
 		});
-	
-		delayedResponse(pageUrl, req.body);
+		execa('node', ['scan', pageUrl, JSON.stringify(req.body)]);
 	} else {
 		res.json({
 			"response_type": "ephemeral",

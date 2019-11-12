@@ -118,6 +118,15 @@ core-util-is@~1.0.0:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
+cross-spawn@^7.0.0:
+  version "7.0.1"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/cross-spawn/-/cross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
+  integrity sha1-CrVihuD3wk4VPQTMKqAn5DqaXRQ=
+  dependencies:
+    path-key "^3.1.0"
+    shebang-command "^2.0.0"
+    which "^2.0.1"
+
 debug@2.6.9, debug@~2.6.9:
   version "2.6.9"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -159,6 +168,13 @@ encodeurl@~1.0.2:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
 
+end-of-stream@^1.1.0:
+  version "1.4.4"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/end-of-stream/-/end-of-stream-1.4.4.tgz#5ae64a5f45057baf3626ec14da0ca5e4b2431eb0"
+  integrity sha1-WuZKX0UFe682JuwU2gyl5LJDHrA=
+  dependencies:
+    once "^1.4.0"
+
 es6-promise@^4.0.3:
   version "4.2.8"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
@@ -180,6 +196,22 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+execa@^3.3.0:
+  version "3.3.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/execa/-/execa-3.3.0.tgz#7e348eef129a1937f21ecbbd53390942653522c1"
+  integrity sha1-fjSO7xKaGTfyHsu9UzkJQmU1IsE=
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
+    onetime "^5.1.0"
+    p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
 
 express@~4.16.1:
   version "4.16.4"
@@ -262,6 +294,13 @@ fs.realpath@^1.0.0:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
+get-stream@^5.0.0:
+  version "5.1.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/get-stream/-/get-stream-5.1.0.tgz#01203cdc92597f9b909067c3e656cc1f4d3c4dc9"
+  integrity sha1-ASA83JJZf5uQkGfD5lbMH008Tck=
+  dependencies:
+    pump "^3.0.0"
+
 glob@^7.1.3:
   version "7.1.6"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
@@ -291,6 +330,11 @@ https-proxy-agent@^3.0.0:
   dependencies:
     agent-base "^4.3.0"
     debug "^3.1.0"
+
+human-signals@^1.1.1:
+  version "1.1.1"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
+  integrity sha1-xbHNFPUK6uCatsWf5jujOV/k36M=
 
 iconv-lite@0.4.23:
   version "0.4.23"
@@ -322,10 +366,20 @@ ipaddr.js@1.9.0:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/ipaddr.js/-/ipaddr.js-1.9.0.tgz#37df74e430a0e47550fe54a2defe30d8acd95f65"
   integrity sha1-N9905DCg5HVQ/lSi3v4w2KzZX2U=
 
+is-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/is-stream/-/is-stream-2.0.0.tgz#bde9c32680d6fae04129d6ac9d921ce7815f78e3"
+  integrity sha1-venDJoDW+uBBKdasnZIc54FfeOM=
+
 isarray@~1.0.0:
   version "1.0.0"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
+
+isexe@^2.0.0:
+  version "2.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
+  integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -336,6 +390,11 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
+
+merge-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
+  integrity sha1-UoI2KaFN0AyXcPtq1H3GMQ8sH2A=
 
 methods@~1.1.2:
   version "1.1.2"
@@ -363,6 +422,11 @@ mime@^2.0.3:
   version "2.4.4"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
   integrity sha1-vXuRE1/GsBzePpuuM9ZZtj2IV+U=
+
+mimic-fn@^2.1.0:
+  version "2.1.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
+  integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
 
 minimatch@^3.0.4:
   version "3.0.4"
@@ -414,6 +478,13 @@ node-fetch@^2.6.0:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha1-5jNFY4bUqlWGP2dqerDaqP3ssP0=
 
+npm-run-path@^4.0.0:
+  version "4.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/npm-run-path/-/npm-run-path-4.0.0.tgz#d644ec1bd0569187d2a52909971023a0a58e8438"
+  integrity sha1-1kTsG9BWkYfSpSkJlxAjoKWOhDg=
+  dependencies:
+    path-key "^3.0.0"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -426,12 +497,24 @@ on-headers@~1.0.1:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
   integrity sha1-dysK5qqlJcOZ5Imt+tkMQD6zwo8=
 
-once@^1.3.0:
+once@^1.3.0, once@^1.3.1, once@^1.4.0:
   version "1.4.0"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
   dependencies:
     wrappy "1"
+
+onetime@^5.1.0:
+  version "5.1.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/onetime/-/onetime-5.1.0.tgz#fff0f3c91617fe62bb50189636e99ac8a6df7be5"
+  integrity sha1-//DzyRYX/mK7UBiWNumayKbfe+U=
+  dependencies:
+    mimic-fn "^2.1.0"
+
+p-finally@^2.0.0:
+  version "2.0.1"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/p-finally/-/p-finally-2.0.1.tgz#bd6fcaa9c559a096b680806f4d657b3f0f240561"
+  integrity sha1-vW/KqcVZoJa2gIBvTWV7Pw8kBWE=
 
 parseurl@~1.3.2:
   version "1.3.3"
@@ -442,6 +525,11 @@ path-is-absolute@^1.0.0:
   version "1.0.1"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
+
+path-key@^3.0.0, path-key@^3.1.0:
+  version "3.1.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/path-key/-/path-key-3.1.0.tgz#99a10d870a803bdd5ee6f0470e58dfcd2f9a54d3"
+  integrity sha1-maENhwqAO91e5vBHDljfzS+aVNM=
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -475,6 +563,14 @@ proxy-from-env@^1.0.0:
   version "1.0.0"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/proxy-from-env/-/proxy-from-env-1.0.0.tgz#33c50398f70ea7eb96d21f7b817630a55791c7ee"
   integrity sha1-M8UDmPcOp+uW0h97gXYwpVeRx+4=
+
+pump@^3.0.0:
+  version "3.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
+  integrity sha1-tKIRaBW94vTh6mAjVOjHVWUQemQ=
+  dependencies:
+    end-of-stream "^1.1.0"
+    once "^1.3.1"
 
 puppeteer@^2.0.0:
   version "2.0.0"
@@ -574,6 +670,23 @@ setprototypeof@1.1.0:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
   integrity sha1-0L2FU2iHtv58DYGMuWLZ2RxU5lY=
 
+shebang-command@^2.0.0:
+  version "2.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
+  integrity sha1-zNCvT4g1+9wmW4JGGq8MNmY/NOo=
+  dependencies:
+    shebang-regex "^3.0.0"
+
+shebang-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
+  integrity sha1-rhbxZE2HPsrYQ7AwexQzYtTEIXI=
+
+signal-exit@^3.0.2:
+  version "3.0.2"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+  integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
+
 "statuses@>= 1.4.0 < 2":
   version "1.5.0"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
@@ -590,6 +703,11 @@ string_decoder@~1.1.1:
   integrity sha1-nPFhG6YmhdcDCunkujQUnDrwP8g=
   dependencies:
     safe-buffer "~5.1.0"
+
+strip-final-newline@^2.0.0:
+  version "2.0.0"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
+  integrity sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0=
 
 type-is@~1.6.16:
   version "1.6.18"
@@ -619,10 +737,22 @@ utils-merge@1.0.1:
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
+uuid@^3.3.3:
+  version "3.3.3"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
+  integrity sha1-RWjwIW54dg7h2/Ok0s9T4iQRKGY=
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+which@^2.0.1:
+  version "2.0.1"
+  resolved "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/which/-/which-2.0.1.tgz#f1cf94d07a8e571b6ff006aeb91d0300c47ef0a4"
+  integrity sha1-8c+U0HqOVxtv8AauuR0DAMR+8KQ=
+  dependencies:
+    isexe "^2.0.0"
 
 wrappy@1:
   version "1.0.2"
