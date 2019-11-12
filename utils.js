@@ -98,7 +98,7 @@ const response = (url, results) => {
 					"type": "section",
 					"accessory": {
 						"type": "image",
-						"image_url": `http://159.203.179.0:4117/captures/${results.screenCapture}`,
+						"image_url": `http://159.203.179.0:4117/${results.screenCapture}`,
 						"alt_text": `A screen capture of the webpage - ${url}`,
 					},
 					"text": {
