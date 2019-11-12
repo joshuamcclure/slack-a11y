@@ -68,7 +68,6 @@ const scan = async (domain) => {
 		return results;
 		
 	} catch (error) {
-        await browser.close();
         return false;
 	}
 };
