@@ -48,7 +48,7 @@ const scan = async (domain) => {
 
 	const browser = await puppeteer.launch({
 		headless: process.env.HEADLESS || true,
-		args: [`--window-size=1400,960`],
+		args: ['--no-sandbox', '--disable-setuid-sandbox', `--window-size=1400,960`],
 	});
 
 	try {
@@ -72,7 +72,7 @@ const scan = async (domain) => {
 		await page.screenshot({path: capturePath});
 		
 		await autoScroll(page);
-		await timeout(5000);
+		await timeout(500);
 
 		results = await page.evaluate(async () => await axe.run({ reporter: "v2" }));
 
